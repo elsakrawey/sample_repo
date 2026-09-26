@@ -30,4 +30,11 @@ class Tracker:
         if not self.tasks:
             return 0.0
         return self.total_cost() / len(self.tasks)
+    def apply_discount(total_amount, discount_percentage):
+    """حساب السعر النهائي بعد تطبيق نسبة الخصم."""
+    if discount_percentage < 0 or discount_percentage > 100:
+        raise ValueError("نسبة الخصم يجب أن تكون بين 0 و 100")
+    
+    discount_amount = total_amount * (discount_percentage / 100)
+    return total_amount - discount_amount
     
